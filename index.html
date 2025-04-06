@@ -9,12 +9,12 @@
 <body class="bg-gray-50">
     <!-- Header -->
     <header class="bg-gray-900 text-white">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold">UPGRADR</h1>
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center flex-col sm:flex-row">
+            <h1 class="text-2xl font-bold mb-4 sm:mb-0">UPGRADR</h1>
             <div>
                 <a href="#services" class="px-4 py-2">Services</a>
                 <a href="#contact" class="px-4 py-2">Contact</a>
-                <a href="#book" class="bg-blue-600 px-4 py-2 rounded-lg ml-4 hover:bg-blue-700">Book Now</a>
+                <a href="#book" class="bg-blue-600 px-4 py-2 rounded-lg ml-0 sm:ml-4 mt-4 sm:mt-0 hover:bg-blue-700 inline-block">Book Now</a>
             </div>
         </nav>
     </header>
@@ -22,27 +22,42 @@
     <!-- Hero Section -->
     <section class="container mx-auto px-6 py-16 text-center">
         <h2 class="text-4xl font-bold mb-4">Professional Studio Technical Services</h2>
-        <p class="text-xl text-gray-600 mb-8">Optimize your studio's performance with expert technical support</p>
-        <a href="#book" class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg hover:bg-blue-700">Schedule Consultation</a>
+        <p class="text-xl text-gray-600 mb-8">Tailored tech support for creatives—minimize downtime, maximize output</p>
+        <a href="#book" class="bg-blue-600 text-white px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg hover:bg-blue-700 inline-block w-full sm:w-auto">Schedule Consultation</a>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="bg-white py-16">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="p-6 border rounded-lg">
                     <h3 class="text-xl font-bold mb-4">Studio Setup & Optimization</h3>
-                    <p class="text-gray-600">Professional configuration of your studio equipment for optimal performance</p>
+                    <p class="text-gray-600">Custom setups for film composers and studio owners, tuned for your workflow</p>
                 </div>
                 <div class="p-6 border rounded-lg">
                     <h3 class="text-xl font-bold mb-4">Network Configuration</h3>
-                    <p class="text-gray-600">Secure and efficient networking solutions for your studio environment</p>
+                    <p class="text-gray-600">Fast, secure networks to keep your creative projects connected</p>
                 </div>
                 <div class="p-6 border rounded-lg">
                     <h3 class="text-xl font-bold mb-4">Technical Maintenance</h3>
-                    <p class="text-gray-600">Regular maintenance and updates to keep your studio running smoothly</p>
+                    <p class="text-gray-600">Weekly to quarterly check-ins to prevent crashes and plugin issues</p>
                 </div>
+                <div class="p-6 border rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Troubleshooting Resources</h3>
+                    <p class="text-gray-600">Expert guides like 'Troubleshooting 101'—coming soon to save your sessions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">What’s Next</h2>
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-gray-600 mb-6">Explore 'Troubleshooting 101' and look out for our upcoming AI-powered studio assistant—your gear, upgraded.</p>
+                <a href="#" class="text-blue-600 hover:text-blue-700 px-4 py-2 rounded-lg border border-blue-600 inline-block">Learn More (Coming Soon)</a>
             </div>
         </div>
     </section>
@@ -52,11 +67,10 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-12">Book a Service</h2>
             <div class="max-w-2xl mx-auto">
-                <!-- Replace this div with your Square Appointments widget -->
                 <div class="bg-white p-6 rounded-lg text-center">
-                    <p class="text-gray-600 mb-4">Schedule your service appointment</p>
+                    <p class="text-gray-600 mb-6">Schedule your service appointment</p>
                     <!-- Add your Square Appointments embed code here -->
-                    <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg inline-block hover:bg-blue-700">Book Now</a>
+                    <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-base hover:bg-blue-700 inline-block w-full sm:w-auto">Book Now</a>
                 </div>
             </div>
         </div>
@@ -68,7 +82,7 @@
             <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
             <div class="max-w-md mx-auto text-center">
                 <p class="mb-4">Get in touch for more information about our services</p>
-                <a href="mailto:contact@upgradr.us" class="text-blue-400 hover:text-blue-300">contact@upgradr.us</a>
+                <a href="mailto:musicstudioservices@gmail.com" class="text-blue-400 hover:text-blue-300">musicstudioservices@gmail.com</a>
             </div>
         </div>
     </section>
@@ -76,7 +90,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 UPGRADR. All rights reserved.</p>
+            <p>© 2025 UPGRADR. All rights reserved.</p>
         </div>
     </footer>
 </body>
