@@ -76,16 +76,16 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="bg-gray-900 text-white py-16">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
-            <div class="max-w-md mx-auto text-center">
-                <p class="mb-4">Get in touch for more information about our services</p>
-                <a href="mailto:musicstudioservices@gmail.com" class="text-blue-400 hover:text-blue-300">musicstudioservices@gmail.com</a>
-            </div>
+  <!-- Contact Section -->
+<section id="contact" class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
+        <div class="max-w-md mx-auto text-center">
+            <p class="mb-6">Get in touch for more information about our services</p>
+            <button id="contact-btn" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-base hover:bg-blue-700">Email Us</button>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
@@ -93,5 +93,12 @@
             <p>© 2025 UPGRADR. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+    document.getElementById('contact-btn').addEventListener('click', function() {
+        var user = 'musicstudioservices';
+        var domain = 'gmail.com';
+        window.location.href = 'mailto:' + user + '@' + domain;
+    });
+</script>
 </body>
 </html>
