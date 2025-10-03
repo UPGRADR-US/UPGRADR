@@ -380,6 +380,96 @@
             margin-bottom: 8px;
         }
         
+        /* Contact Form */
+        .contact-form-wrapper {
+            max-width: 600px;
+            margin: 60px auto 0;
+            background: var(--gray);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-form-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .contact-form-wrapper h3 {
+            color: var(--primary);
+            margin-bottom: 24px;
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: var(--text);
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 14px 32px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,255,136,0.3);
+        }
+        
+        .clickable-card {
+            cursor: pointer;
+        }
+        
         /* Footer */
         footer {
             background: var(--dark);
@@ -462,10 +552,6 @@
                 <div class="problem-card">
                     <h4>Software Malfunction</h4>
                     <p>"My DAW is acting weird and my recordings sound terrible"</p>
-                </div>
-                <div class="problem-card">
-                    <h4>Acoustic Anomaly</h4>
-                    <p>"Everything I record in my room sounds muddy and echoey"</p>
                 </div>
             </div>
         </div>
@@ -612,7 +698,7 @@
                 <div class="contact-item">
                     <h3>Direct Channel</h3>
                     <p>Email: musicstudioservices@gmail.com</p>
-                    <p>Phone: (314) XXX-XXXX</p>
+                    <p>Phone: (314) 626-5052</p>
                 </div>
                 <div class="contact-item">
                     <h3>Geographic Scope</h3>
@@ -627,6 +713,53 @@
                     <p>Emergency troubleshooting available</p>
                 </div>
             </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper">
+                <h3>Send a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone (optional)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">I'm interested in</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service...</option>
+                            <option value="Equipment Failure">Equipment Failure Issue</option>
+                            <option value="Configuration Error">Configuration Error Help</option>
+                            <option value="Software Malfunction">Software Malfunction Support</option>
+                            <option value="DAW Troubleshooting">DAW Troubleshooting</option>
+                            <option value="Home Studio Setup">Home Studio Setup</option>
+                            <option value="Complete Studio Setup Package">Complete Studio Setup Package</option>
+                            <option value="Remote Support">Remote Support</option>
+                            <option value="Single Song Production">Single Song Production</option>
+                            <option value="EP Production (4+ songs)">EP Production (4+ songs)</option>
+                            <option value="Mixing & Mastering">Mixing & Mastering</option>
+                            <option value="Recording & Engineering">Recording & Engineering</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -636,5 +769,78 @@
             <p>&copy; 2025 Music Studio Services. All rights reserved. | Saint Louis, Missouri</p>
         </div>
     </footer>
+    
+    <script>
+        // Make service cards and problem cards clickable
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add clickable class and click handlers to service cards
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.classList.add('clickable-card');
+                card.addEventListener('click', function() {
+                    const serviceName = this.querySelector('h3').textContent;
+                    navigateToForm(serviceName);
+                });
+            });
+            
+            // Add clickable class and click handlers to problem cards
+            const problemCards = document.querySelectorAll('.problem-card');
+            problemCards.forEach(card => {
+                card.classList.add('clickable-card');
+                card.addEventListener('click', function() {
+                    const problemName = this.querySelector('h4').textContent;
+                    navigateToForm(problemName);
+                });
+            });
+            
+            // Function to navigate to form and pre-select service
+            function navigateToForm(serviceName) {
+                // Scroll to contact section
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                
+                // Wait for scroll, then select the service
+                setTimeout(() => {
+                    const serviceSelect = document.getElementById('service');
+                    const options = serviceSelect.options;
+                    
+                    // Try to find matching option
+                    for (let i = 0; i < options.length; i++) {
+                        if (options[i].text.includes(serviceName) || options[i].value === serviceName) {
+                            serviceSelect.selectedIndex = i;
+                            break;
+                        }
+                    }
+                    
+                    // Focus on the name field
+                    document.getElementById('name').focus();
+                }, 800);
+            }
+            
+            // Handle form submission
+            const form = document.getElementById('contactForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const service = document.getElementById('service').value;
+                const message = document.getElementById('message').value;
+                
+                // Create email body
+                const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone || 'Not provided'}%0D%0AInterested in: ${service}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+                
+                // Create mailto link
+                const mailtoLink = `mailto:musicstudioservices@gmail.com?subject=New Inquiry: ${service}&body=${emailBody}`;
+                
+                // Open email client
+                window.location.href = mailtoLink;
+                
+                // Optional: Show confirmation message
+                alert('Opening your email client to send the message. If it doesn\'t open automatically, please email us directly at musicstudioservices@gmail.com');
+            });
+        });
+    </script>
 </body>
 </html>
