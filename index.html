@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Studio Services | Audio Technical Support | Saint Louis, MO</title>
+    <title>Justin DiCenzo | UPGRADR AUDIO | Saint Louis, MO</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
@@ -38,7 +38,7 @@
             padding: 0 24px;
         }
         
-        /* Animated Background */
+        /* Animated Background (TRON/Blade Runner Vibe) */
         .bg-grid {
             position: fixed;
             top: 0;
@@ -64,7 +64,7 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(10, 10, 10, 0.8);
+            background: rgba(10, 10, 10, 0.9);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
@@ -80,10 +80,12 @@
         .logo {
             font-size: 24px;
             font-weight: 700;
+            letter-spacing: -0.5px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
+            text-transform: uppercase;
         }
         
         .nav-links {
@@ -98,30 +100,18 @@
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .nav-links a:hover {
             color: var(--primary);
         }
         
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             position: relative;
@@ -129,35 +119,51 @@
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
+        }
+
+        .credits-banner {
+            display: inline-block;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--primary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
         }
         
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
             margin-bottom: 24px;
-            background: linear-gradient(135deg, var(--text) 0%, var(--primary) 50%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--text) 0%, var(--text) 50%, var(--text-muted) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1.1;
         }
         
         .hero p {
-            font-size: 20px;
+            font-size: 22px;
             color: var(--text-muted);
             margin-bottom: 40px;
             font-weight: 400;
+            max-width: 700px;
         }
         
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--dark);
-            padding: 16px 32px;
+            padding: 18px 36px;
             text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
+            border-radius: 4px;
+            font-weight: 700;
             font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -165,38 +171,21 @@
         
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 20px 40px rgba(0,255,136,0.3);
-        }
-        
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .cta-button:hover::before {
-            left: 100%;
+            box-shadow: 0 0 30px rgba(0,255,136,0.4);
         }
         
         /* Problems Section */
         .problems {
-            padding: 120px 0;
+            padding: 100px 0;
             position: relative;
         }
         
         .section-title {
-            text-align: center;
+            text-align: left;
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
-            margin-bottom: 80px;
-            background: linear-gradient(135deg, var(--text), var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 60px;
+            color: var(--text);
         }
         
         .problems-grid {
@@ -208,45 +197,34 @@
         .problem-card {
             background: rgba(255, 107, 107, 0.05);
             border: 1px solid rgba(255, 107, 107, 0.2);
-            border-radius: 16px;
+            border-radius: 8px;
             padding: 32px 24px;
-            text-align: center;
+            text-align: left;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .problem-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #ff6b6b, transparent);
+            cursor: pointer;
         }
         
         .problem-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 107, 107, 0.08);
+            transform: translateY(-4px);
+            background: rgba(255, 107, 107, 0.1);
+            border-color: #ff6b6b;
         }
         
         .problem-card h4 {
             color: #ff6b6b;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             font-weight: 600;
             font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
-        .problem-card p {
-            color: var(--text-muted);
-            font-style: italic;
-        }
-        
-        /* Services Section */
+        /* Services Section (The 3 Pillars) */
         .services {
             padding: 120px 0;
             background: rgba(26, 26, 26, 0.5);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
         
         .services-grid {
@@ -258,52 +236,50 @@
         .service-card {
             background: var(--gray);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
+            border-radius: 8px;
+            padding: 40px;
             position: relative;
             transition: all 0.4s ease;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-        
-        .service-card:hover::before {
-            transform: scaleX(1);
+            display: flex;
+            flex-direction: column;
         }
         
         .service-card:hover {
             transform: translateY(-8px);
             border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0,255,136,0.1);
+            box-shadow: 0 0 40px rgba(0,255,136,0.1);
         }
         
         .service-card h3 {
+            color: var(--text);
+            margin-bottom: 8px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .service-subtitle {
             color: var(--primary);
-            margin-bottom: 16px;
-            font-size: 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
             font-weight: 600;
         }
         
-        .service-card p {
-            margin-bottom: 16px;
-            font-weight: 600;
+        .price-tag {
+            font-size: 20px;
             color: var(--text);
+            font-weight: 600;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
         }
         
         .service-list {
             list-style: none;
             padding-left: 0;
+            margin-bottom: 32px;
+            flex-grow: 1;
         }
         
         .service-list li {
@@ -311,25 +287,48 @@
             color: var(--text-muted);
             position: relative;
             padding-left: 24px;
+            font-size: 15px;
         }
         
         .service-list li::before {
-            content: "◆";
+            content: ">";
             color: var(--primary);
             font-weight: bold;
             position: absolute;
             left: 0;
         }
+
+        .book-btn {
+            width: 100%;
+            padding: 14px;
+            background: transparent;
+            border: 1px solid var(--text-muted);
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .book-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--dark);
+        }
         
-        /* About Section */
+        /* About/Credits Section */
         .about {
             padding: 120px 0;
         }
         
         .about-content {
             max-width: 900px;
-            margin: 0 auto;
-            text-align: left;
+        }
+        
+        .about-content h2 {
+            font-size: 32px;
+            margin-bottom: 32px;
         }
         
         .about-content p {
@@ -338,101 +337,86 @@
             margin-bottom: 24px;
             color: var(--text-muted);
         }
-        
-        .about-content strong {
+
+        .credit-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .credit-tag {
+            background: var(--gray);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 4px;
             color: var(--text);
-            font-weight: 600;
-        }
-        
-        .about-content a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .about-content a:hover {
-            text-decoration: underline;
+            font-size: 14px;
         }
         
         /* Contact Section */
         .contact {
-            padding: 120px 0;
+            padding: 100px 0;
             background: var(--gray);
             border-top: 1px solid var(--border);
         }
         
-        .contact-info {
+        .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 48px;
-            text-align: center;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
         }
-        
-        .contact-item h3 {
-            color: var(--primary);
-            margin-bottom: 16px;
-            font-size: 18px;
-            font-weight: 600;
+
+        .policy-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid var(--primary);
+            padding: 24px;
+            margin-top: 32px;
         }
-        
-        .contact-item p {
+
+        .policy-box h4 {
+            color: var(--text);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .policy-box ul {
+            list-style: none;
+        }
+
+        .policy-box li {
             color: var(--text-muted);
             margin-bottom: 8px;
+            font-size: 14px;
         }
         
-        /* Contact Form */
-        .contact-form-wrapper {
-            max-width: 600px;
-            margin: 60px auto 0;
-            background: var(--gray);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .contact-form-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-        }
-        
-        .contact-form-wrapper h3 {
-            color: var(--primary);
-            margin-bottom: 24px;
-            font-size: 24px;
-            font-weight: 600;
-            text-align: center;
-        }
-        
+        /* Form */
         .form-group {
             margin-bottom: 20px;
         }
         
         .form-group label {
             display: block;
-            color: var(--text);
+            color: var(--text-muted);
             margin-bottom: 8px;
-            font-weight: 500;
-            font-size: 14px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 12px 16px;
+            padding: 16px;
             background: var(--dark);
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 4px;
             color: var(--text);
             font-family: 'Inter', sans-serif;
-            font-size: 14px;
+            font-size: 16px;
             transition: border-color 0.3s ease;
         }
         
@@ -443,31 +427,23 @@
             border-color: var(--primary);
         }
         
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
         .form-submit {
             width: 100%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: var(--text);
             color: var(--dark);
-            padding: 14px 32px;
+            padding: 16px 32px;
             border: none;
-            border-radius: 8px;
-            font-weight: 600;
+            border-radius: 4px;
+            font-weight: 700;
             font-size: 16px;
+            text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s ease;
         }
         
         .form-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,255,136,0.3);
-        }
-        
-        .clickable-card {
-            cursor: pointer;
+            background: var(--primary);
+            box-shadow: 0 0 20px rgba(0,255,136,0.3);
         }
         
         /* Footer */
@@ -485,361 +461,228 @@
         
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero {
-                padding: 100px 0 60px;
-                text-align: center;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .container {
-                padding: 0 20px;
-            }
+            .contact-container { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero { padding: 100px 0 60px; }
+            .hero h1 { font-size: 2.5rem; }
+            .container { padding: 0 20px; }
         }
         
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
     <div class="bg-grid"></div>
     
-    <!-- Header -->
     <header>
         <nav class="container">
-            <a href="#" class="logo">Music Studio Services</a>
+            <a href="#" class="logo">UPGRADR AUDIO</a>
             <ul class="nav-links">
-                <li><a href="#services">Technical Services</a></li>
-                <li><a href="#production">Music Production</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">Credits</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Audio Technical Excellence</h1>
-                <p>Grammy-winning technical expertise for your studio setup and troubleshooting needs in Saint Louis</p>
+                <div class="credits-banner">
+                    CREDITS: ANDERSON .PAAK • GET OUT • ARRESTED DEVELOPMENT • THE GOOD PLACE
+                </div>
+                <h1>Technical Direction & <br>Audio Solutions.</h1>
+                <p>I solve the technical problems that stop you from making music. Grammy-winning expertise for your studio, sound, and systems.</p>
                 <a href="#contact" class="cta-button">Initialize Support</a>
             </div>
         </div>
     </section>
 
-    <!-- Problems Section -->
     <section class="problems">
         <div class="container">
-            <h2 class="section-title">System Errors Detected</h2>
+            <h2 class="section-title">System Errors Detected?</h2>
             <div class="problems-grid">
                 <div class="problem-card">
-                    <h4>Equipment Failure</h4>
-                    <p>"My audio interface keeps cutting out and I can't figure out why"</p>
+                    <h4>Hardware Conflicts</h4>
+                    <p>"My interface keeps cutting out and the drivers won't sync."</p>
                 </div>
                 <div class="problem-card">
-                    <h4>Configuration Error</h4>
-                    <p>"I bought all this gear but can't get it connected properly"</p>
+                    <h4>Workflow Bottlenecks</h4>
+                    <p>"I have great gear but I spend 2 hours setting up before I can record."</p>
                 </div>
                 <div class="problem-card">
-                    <h4>Software Malfunction</h4>
-                    <p>"My DAW is acting weird and my recordings sound terrible"</p>
+                    <h4>Sonic Issues</h4>
+                    <p>"My mixes sound weak compared to commercial releases."</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technical Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Technical Services</h2>
+            <h2 class="section-title">The Solution Stack</h2>
             <div class="services-grid">
+                
                 <div class="service-card">
-                    <h3>DAW Troubleshooting</h3>
-                    <p>$150 minimum (covers first 2 hours)</p>
-                    <p>$100/hour for additional time beyond 2 hours</p>
+                    <span class="service-subtitle">THE ENGINEER</span>
+                    <h3>Technical Rescue</h3>
+                    <div class="price-tag">$150 Minimum</div>
                     <ul class="service-list">
-                        <li>Audio interfaces and drivers</li>
-                        <li>Plugin management and installation</li>
-                        <li>Hardware configuration</li>
-                        <li>Software configuration issues</li>
-                        <li>Computer audio settings</li>
+                        <li><strong>Includes first 2 hours of labor</strong></li>
+                        <li>$100/hour thereafter</li>
+                        <li>DAW Troubleshooting (Pro Tools, Ableton, Logic)</li>
+                        <li>Driver/Hardware Conflict Resolution</li>
+                        <li>Plugin Management</li>
+                        <li>Remote Screen-Share Support</li>
                     </ul>
+                    <button class="book-btn" onclick="navigateToForm('Technical Rescue')">Initialize</button>
                 </div>
                 
                 <div class="service-card">
-                    <h3>Home Studio Setup</h3>
-                    <p>Remote Setup: $200</p>
-                    <p>On-site Setup: $400</p>
+                    <span class="service-subtitle">THE ARCHITECT</span>
+                    <h3>Studio Integration</h3>
+                    <div class="price-tag">Packages from $1,500</div>
                     <ul class="service-list">
-                        <li>Equipment selection and purchasing advice</li>
-                        <li>Physical setup and cable management (on-site)</li>
-                        <li>Software installation and configuration</li>
-                        <li>Basic acoustic treatment recommendations</li>
-                        <li>Workflow optimization</li>
-                        <li>Ongoing support: $100/hour</li>
+                        <li>Complete Studio Design & Setup</li>
+                        <li>Workflow Optimization</li>
+                        <li>Cable Management & Routing</li>
+                        <li>Acoustic Treatment Consultation</li>
+                        <li>Includes 3 Engineering Lessons</li>
                     </ul>
+                    <button class="book-btn" onclick="navigateToForm('Studio Integration')">Initialize</button>
                 </div>
                 
                 <div class="service-card">
-                    <h3>Complete Studio Setup Package</h3>
-                    <p>$1,500 complete package includes:</p>
+                    <span class="service-subtitle">THE PRODUCER</span>
+                    <h3>Production</h3>
+                    <div class="price-tag">$2,250 / Song</div>
                     <ul class="service-list">
-                        <li>Equipment consultation</li>
-                        <li>Studio setup and installation</li>
-                        <li>3 engineering lessons (workflow training)</li>
-                        <li>Ongoing support: $100/hour for additional coaching</li>
+                        <li>Full Production (Concept to Master)</li>
+                        <li>Session Musicians Included</li>
+                        <li>Grammy-Winning Mix Engineering</li>
+                        <li>EP Packages Available ($1,800/song for 4+)</li>
+                        <li>Distribution Setup Included</li>
                     </ul>
+                    <button class="book-btn" onclick="navigateToForm('Production')">Initialize</button>
                 </div>
-                
-                <div class="service-card">
-                    <h3>Remote Support</h3>
-                    <p>$100/hour</p>
-                    <ul class="service-list">
-                        <li>Screen sharing troubleshooting sessions</li>
-                        <li>Step-by-step guidance over video call</li>
-                        <li>Equipment recommendations via consultation</li>
-                        <li>Follow-up support after initial setup</li>
-                        <li>Ongoing technical maintenance advice</li>
-                    </ul>
-                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Music Production Services Section -->
-    <section id="production" class="services">
-        <div class="container">
-            <h2 class="section-title">Music Production Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Single Song Production</h3>
-                    <p>$2,222 per song</p>
-                    <ul class="service-list">
-                        <li>Complete production from concept to final master</li>
-                        <li>Professional mixing included</li>
-                        <li>Final mastering</li>
-                        <li>Session musicians as needed</li>
-                        <li>Optional: Distribution setup through DistroKid</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <h3>EP Production (4+ songs)</h3>
-                    <p>$1,777 per song</p>
-                    <p>4-song EP: $7,108 total</p>
-                    <ul class="service-list">
-                        <li>Volume discount for multi-song projects</li>
-                        <li>Complete production package per song</li>
-                        <li>Consistent sound across the EP</li>
-                        <li>Professional mixing and mastering</li>
-                        <li>Project management and timeline coordination</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Mixing & Mastering</h3>
-                    <p>Contact for pricing</p>
-                    <ul class="service-list">
-                        <li>Professional mixing services</li>
-                        <li>Final mastering for streaming and physical release</li>
-                        <li>Grammy-winning engineering expertise</li>
-                        <li>Stems and alternate versions provided</li>
-                        <li>Revision rounds included</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Recording & Engineering</h3>
-                    <p>Contact for consultation</p>
-                    <ul class="service-list">
-                        <li>Professional recording sessions</li>
-                        <li>Instrument tracking and vocal recording</li>
-                        <li>Session musician coordination</li>
-                        <li>Live recording and performance capture</li>
-                        <li>Technical engineering support</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Music Studio Services</h2>
             <div class="about-content">
-                <p><strong>Justin DiCenzo</strong>, owner of Music Studio Services, brings extensive technical expertise from years of professional audio work in film and television production. As a <strong>Grammy Award winner</strong> for his work on <strong>Anderson .Paak's Ventura</strong>, and with credits on major productions including <strong>Get Out</strong> (score technical engineer), <strong>The Good Place</strong> (music mixer), <strong>Arrested Development</strong> (music coordinator), and <strong>Superstore</strong> (additional music composer), Justin has solved complex audio technical challenges on numerous high-profile projects.</p>
+                <h2>The Standard of Operation</h2>
+                <p><strong>Justin DiCenzo</strong> provides high-level technical direction for audio professionals. You are not paying for "help"; you are paying for the removal of variables that cause failure.</p>
                 
-                <p>This Grammy-winning, film and TV production experience - spanning technical engineering on Academy Award-winning films to music coordination for major network television - means Justin understands audio systems under pressure. When deadlines are tight and equipment absolutely must work, he's been there and solved it at the highest level.</p>
-                
-                <p>Whether it's troubleshooting driver conflicts, optimizing plugin performance, configuring complex audio routing, or managing technical workflows for Grammy-winning albums and major network television, Justin has dealt with these issues in high-stakes professional environments where failure isn't an option.</p>
-                
-                <p>Now Justin applies this Grammy and professional film/TV troubleshooting expertise to help musicians and content creators in the Saint Louis area get their home studios working reliably. No more wrestling with technology when you should be making music.</p>
-                
-                <p><em>Full filmography and credits available on <a href="https://www.imdb.com/name/nm2346806/" target="_blank">IMDB</a></em></p>
+                <p>With a background in high-pressure broadcast and film environments, Justin understands that downtime is not an option. His work on <strong>Anderson .Paak's "Ventura"</strong> (Grammy Winner), <strong>Get Out</strong>, and <strong>Arrested Development</strong> required absolute technical precision. He brings that same stability to your home studio or production project.</p>
+
+                <div class="credit-list">
+                    <span class="credit-tag">Grammy Winner (Engineering)</span>
+                    <span class="credit-tag">Film Score Tech</span>
+                    <span class="credit-tag">Music Coordinator</span>
+                    <span class="credit-tag">Lindenwood Professor</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Initialize Connection</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>Direct Channel</h3>
-                    <p>Email: musicstudioservices@gmail.com</p>
-                    <p>Phone: (314) 626-5052</p>
+            <div class="contact-container">
+                
+                <div class="contact-info">
+                    <h2 class="section-title">Initialize<br>Connection</h2>
+                    <p style="color: var(--text-muted);">Saint Louis, MO • Global Remote Support</p>
+                    <p style="margin-top: 16px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cea3bbbda7adbdbabbaaa7a1bdabbcb8a7adabbd8ea9a3afa7a2e0ada1a3">[email&#160;protected]</a></p>
+                    
+                    <div class="policy-box">
+                        <h4>Standard Protocol</h4>
+                        <ul>
+                            <li>• <strong>2-Hour Minimum</strong> for all technical sessions.</li>
+                            <li>• <strong>50% Deposit</strong> required to lock calendar dates.</li>
+                            <li>• Same-day response for requests before 4 PM CST.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <h3>Geographic Scope</h3>
-                    <p>Saint Louis, Missouri</p>
-                    <p>Metro STL Region</p>
-                    <p>Remote support available</p>
+
+                <div class="contact-form-wrapper">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Required Service</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select Protocol...</option>
+                                <option value="Technical Rescue">Technical Rescue ($150 min)</option>
+                                <option value="Studio Integration">Studio Integration / Setup</option>
+                                <option value="Production">Music Production / Mixing</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Brief Description of Error/Project</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-submit">Transmit Request</button>
+                    </form>
                 </div>
-                <div class="contact-item">
-                    <h3>Response Protocol</h3>
-                    <p>Same-day response</p>
-                    <p>Flexible scheduling</p>
-                    <p>Emergency troubleshooting available</p>
-                </div>
-            </div>
-            
-            <!-- Contact Form -->
-            <div class="contact-form-wrapper">
-                <h3>Send a Message</h3>
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone (optional)</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="service">I'm interested in</label>
-                        <select id="service" name="service" required>
-                            <option value="">Select a service...</option>
-                            <option value="Equipment Failure">Equipment Failure Issue</option>
-                            <option value="Configuration Error">Configuration Error Help</option>
-                            <option value="Software Malfunction">Software Malfunction Support</option>
-                            <option value="DAW Troubleshooting">DAW Troubleshooting</option>
-                            <option value="Home Studio Setup">Home Studio Setup</option>
-                            <option value="Complete Studio Setup Package">Complete Studio Setup Package</option>
-                            <option value="Remote Support">Remote Support</option>
-                            <option value="Single Song Production">Single Song Production</option>
-                            <option value="EP Production (4+ songs)">EP Production (4+ songs)</option>
-                            <option value="Mixing & Mastering">Mixing & Mastering</option>
-                            <option value="Recording & Engineering">Recording & Engineering</option>
-                            <option value="General Inquiry">General Inquiry</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="form-submit">Send Message</button>
-                </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Music Studio Services. All rights reserved. | Saint Louis, Missouri</p>
+            <p>&copy; 2025 Justin DiCenzo | UPGRADR AUDIO. All rights reserved.</p>
         </div>
     </footer>
-    
-    <script>
-        // Make service cards and problem cards clickable
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add clickable class and click handlers to service cards
-            const serviceCards = document.querySelectorAll('.service-card');
-            serviceCards.forEach(card => {
-                card.classList.add('clickable-card');
-                card.addEventListener('click', function() {
-                    const serviceName = this.querySelector('h3').textContent;
-                    navigateToForm(serviceName);
-                });
-            });
-            
-            // Add clickable class and click handlers to problem cards
-            const problemCards = document.querySelectorAll('.problem-card');
-            problemCards.forEach(card => {
-                card.classList.add('clickable-card');
-                card.addEventListener('click', function() {
-                    const problemName = this.querySelector('h4').textContent;
-                    navigateToForm(problemName);
-                });
-            });
-            
-            // Function to navigate to form and pre-select service
-            function navigateToForm(serviceName) {
-                // Scroll to contact section
-                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-                
-                // Wait for scroll, then select the service
-                setTimeout(() => {
-                    const serviceSelect = document.getElementById('service');
-                    const options = serviceSelect.options;
-                    
-                    // Try to find matching option
-                    for (let i = 0; i < options.length; i++) {
-                        if (options[i].text.includes(serviceName) || options[i].value === serviceName) {
-                            serviceSelect.selectedIndex = i;
-                            break;
-                        }
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function navigateToForm(serviceName) {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                const serviceSelect = document.getElementById('service');
+                const options = serviceSelect.options;
+                for (let i = 0; i < options.length; i++) {
+                    if (options[i].value.includes(serviceName)) {
+                        serviceSelect.selectedIndex = i;
+                        break;
                     }
-                    
-                    // Focus on the name field
-                    document.getElementById('name').focus();
-                }, 800);
-            }
-            
-            // Handle form submission
-            const form = document.getElementById('contactForm');
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form data
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const phone = document.getElementById('phone').value;
-                const service = document.getElementById('service').value;
-                const message = document.getElementById('message').value;
-                
-                // Create email body
-                const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone || 'Not provided'}%0D%0AInterested in: ${service}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-                
-                // Create mailto link
-                const mailtoLink = `mailto:musicstudioservices@gmail.com?subject=New Inquiry: ${service}&body=${emailBody}`;
-                
-                // Open email client
-                window.location.href = mailtoLink;
-                
-                // Optional: Show confirmation message
-                alert('Opening your email client to send the message. If it doesn\'t open automatically, please email us directly at musicstudioservices@gmail.com');
+                }
+                document.getElementById('name').focus();
+            }, 800);
+        }
+
+        // Handle clickable problem cards
+        document.querySelectorAll('.problem-card').forEach(card => {
+            card.addEventListener('click', () => {
+                navigateToForm('Technical Rescue');
             });
+        });
+
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0AService: ${service}%0D%0A%0D%0ADetails:%0D%0A${message}`;
+            const mailtoLink = `mailto:musicstudioservices@gmail.com?subject=UPGRADR Inquiry: ${service}&body=${emailBody}`;
+            
+            window.location.href = mailtoLink;
         });
     </script>
 </body>
