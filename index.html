@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Justin DiCenzo | UPGRADR AUDIO | The Grid</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet">
+    <title>Justin DiCenzo | UPGRADR AUDIO | Saint Louis, MO</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -13,30 +14,22 @@
         }
         
         :root {
-            /* TRON PALETTE */
-            --primary: #00eaff; /* The classic Tron Cyan */
-            --primary-glow: rgba(0, 234, 255, 0.5);
-            --secondary: #ffffff;
-            --dark: #020204; /* Almost pure black */
-            --darker-blue: #050a14;
-            --panel-bg: rgba(0, 20, 30, 0.8); /* Glassy dark blue */
-            --text: #e0ffff; /* Slightly cool white */
-            --text-muted: #7ab0d6;
-            --border: rgba(0, 234, 255, 0.3);
+            --primary: #00ff88;
+            --secondary: #0070f3;
+            --dark: #0a0a0a;
+            --gray: #1a1a1a;
+            --light-gray: #333;
+            --text: #ffffff;
+            --text-muted: #888;
+            --border: #333;
         }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--dark);
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4, .logo, .cta-button, .book-btn {
-            font-family: 'Orbitron', sans-serif; /* Tech font for headers */
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
         
         .container {
@@ -45,7 +38,7 @@
             padding: 0 24px;
         }
         
-        /* TRON GRID BACKGROUND */
+        /* Animated Background (TRON/Blade Runner Vibe) */
         .bg-grid {
             position: fixed;
             top: 0;
@@ -53,34 +46,644 @@
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(rgba(0, 234, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 234, 255, 0.1) 1px, transparent 1px);
-            background-size: 60px 60px;
-            z-index: -2;
-            perspective: 1000px;
-            transform-style: preserve-3d;
-            animation: grid-move 15s linear infinite;
-        }
-
-        /* Subtle distant glow */
-        .bg-grid::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at center, transparent 0%, var(--dark) 80%);
+                linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
             z-index: -1;
+            animation: grid-move 20s linear infinite;
         }
         
         @keyframes grid-move {
-            0% { transform: translateY(0) translateZ(0); }
-            100% { transform: translateY(60px) translateZ(0); }
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
         }
         
-        /* Header & Nav */
+        /* Header */
         header {
             position: fixed;
-            top: 0; left: 0; right: 0;
-            background: rgba(2, 2, 4, 0.9);
-            backdrop-filter: blur(10px);
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
-            box-shadow: 0 1px
+            z-index: 1000;
+            padding: 16px 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+        
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 120px 0 80px;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .credits-banner {
+            display: inline-block;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--primary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--text) 0%, var(--text) 50%, var(--text-muted) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-weight: 400;
+            max-width: 700px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 18px 36px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0,255,136,0.4);
+        }
+        
+        /* Problems Section */
+        .problems {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: left;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: var(--text);
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        .problem-card {
+            background: rgba(255, 107, 107, 0.05);
+            border: 1px solid rgba(255, 107, 107, 0.2);
+            border-radius: 8px;
+            padding: 32px 24px;
+            text-align: left;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 107, 107, 0.1);
+            border-color: #ff6b6b;
+        }
+        
+        .problem-card h4 {
+            color: #ff6b6b;
+            margin-bottom: 12px;
+            font-weight: 600;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Services Section (The 3 Pillars) */
+        .services {
+            padding: 120px 0;
+            background: rgba(26, 26, 26, 0.5);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+        
+        .service-card {
+            background: var(--gray);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 40px;
+            position: relative;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 0 40px rgba(0,255,136,0.1);
+        }
+        
+        .service-card h3 {
+            color: var(--text);
+            margin-bottom: 8px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .service-subtitle {
+            color: var(--primary);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+        
+        .price-tag {
+            font-size: 20px;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .service-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 32px;
+            flex-grow: 1;
+        }
+        
+        .service-list li {
+            padding: 8px 0;
+            color: var(--text-muted);
+            position: relative;
+            padding-left: 24px;
+            font-size: 15px;
+        }
+        
+        .service-list li::before {
+            content: ">";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .book-btn {
+            width: 100%;
+            padding: 14px;
+            background: transparent;
+            border: 1px solid var(--text-muted);
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .book-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--dark);
+        }
+        
+        /* About/Credits Section */
+        .about {
+            padding: 120px 0;
+        }
+        
+        .about-content {
+            max-width: 900px;
+        }
+        
+        .about-content h2 {
+            font-size: 32px;
+            margin-bottom: 32px;
+        }
+        
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            color: var(--text-muted);
+        }
+
+        .credit-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .credit-tag {
+            background: var(--gray);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 4px;
+            color: var(--text);
+            font-size: 14px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: var(--gray);
+            border-top: 1px solid var(--border);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+        }
+
+        .policy-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid var(--primary);
+            padding: 24px;
+            margin-top: 32px;
+        }
+
+        .policy-box h4 {
+            color: var(--text);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .policy-box ul {
+            list-style: none;
+        }
+
+        .policy-box li {
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        /* Form */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px;
+            background: var(--dark);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-submit {
+            width: 100%;
+            background: var(--text);
+            color: var(--dark);
+            padding: 16px 32px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .form-submit:hover {
+            background: var(--primary);
+            box-shadow: 0 0 20px rgba(0,255,136,0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-container { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero { padding: 100px 0 60px; }
+            .hero h1 { font-size: 2.5rem; }
+            .container { padding: 0 20px; }
+        }
+        
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">UPGRADR AUDIO</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">Credits</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="credits-banner">
+                    CREDITS: ANDERSON .PAAK • GET OUT • ARRESTED DEVELOPMENT • THE GOOD PLACE
+                </div>
+                <h1>Technical Direction & <br>Audio Solutions.</h1>
+                <p>I solve the technical problems that stop you from making music. Grammy-winning expertise for your studio, sound, and systems.</p>
+                <a href="#contact" class="cta-button">Initialize Support</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="problems">
+        <div class="container">
+            <h2 class="section-title">System Errors Detected?</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <h4>Hardware Conflicts</h4>
+                    <p>"My interface keeps cutting out and the drivers won't sync."</p>
+                </div>
+                <div class="problem-card">
+                    <h4>Workflow Bottlenecks</h4>
+                    <p>"I have great gear but I spend 2 hours setting up before I can record."</p>
+                </div>
+                <div class="problem-card">
+                    <h4>Sonic Issues</h4>
+                    <p>"My mixes sound weak compared to commercial releases."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">The Solution Stack</h2>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <span class="service-subtitle">THE ENGINEER</span>
+                    <h3>Technical Rescue</h3>
+                    <div class="price-tag">$150 Minimum</div>
+                    <ul class="service-list">
+                        <li><strong>Includes first 2 hours of labor</strong></li>
+                        <li>$100/hour thereafter</li>
+                        <li>DAW Troubleshooting (Pro Tools, Ableton, Logic)</li>
+                        <li>Driver/Hardware Conflict Resolution</li>
+                        <li>Plugin Management</li>
+                        <li>Remote Screen-Share Support</li>
+                    </ul>
+                    <button class="book-btn" onclick="navigateToForm('Technical Rescue')">Initialize</button>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-subtitle">THE ARCHITECT</span>
+                    <h3>Studio Integration</h3>
+                    <div class="price-tag">Packages from $1,500</div>
+                    <ul class="service-list">
+                        <li>Complete Studio Design & Setup</li>
+                        <li>Workflow Optimization</li>
+                        <li>Cable Management & Routing</li>
+                        <li>Acoustic Treatment Consultation</li>
+                        <li>Includes 3 Engineering Lessons</li>
+                    </ul>
+                    <button class="book-btn" onclick="navigateToForm('Studio Integration')">Initialize</button>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-subtitle">THE PRODUCER</span>
+                    <h3>Production</h3>
+                    <div class="price-tag">$2,250 / Song</div>
+                    <ul class="service-list">
+                        <li>Full Production (Concept to Master)</li>
+                        <li>Session Musicians Included</li>
+                        <li>Grammy-Winning Mix Engineering</li>
+                        <li>EP Packages Available ($1,800/song for 4+)</li>
+                        <li>Distribution Setup Included</li>
+                    </ul>
+                    <button class="book-btn" onclick="navigateToForm('Production')">Initialize</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>The Standard of Operation</h2>
+                <p><strong>Justin DiCenzo</strong> provides high-level technical direction for audio professionals. You are not paying for "help"; you are paying for the removal of variables that cause failure.</p>
+                
+                <p>With a background in high-pressure broadcast and film environments, Justin understands that downtime is not an option. His work on <strong>Anderson .Paak's "Ventura"</strong> (Grammy Winner), <strong>Get Out</strong>, and <strong>Arrested Development</strong> required absolute technical precision. He brings that same stability to your home studio or production project.</p>
+
+                <div class="credit-list">
+                    <span class="credit-tag">Grammy Winner (Engineering)</span>
+                    <span class="credit-tag">Film Score Tech</span>
+                    <span class="credit-tag">Music Coordinator</span>
+                    <span class="credit-tag">Lindenwood Professor</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-container">
+                
+                <div class="contact-info">
+                    <h2 class="section-title">Initialize<br>Connection</h2>
+                    <p style="color: var(--text-muted);">Saint Louis, MO • Global Remote Support</p>
+                    <p style="margin-top: 16px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cea3bbbda7adbdbabbaaa7a1bdabbcb8a7adabbd8ea9a3afa7a2e0ada1a3">[email&#160;protected]</a></p>
+                    
+                    <div class="policy-box">
+                        <h4>Standard Protocol</h4>
+                        <ul>
+                            <li>• <strong>2-Hour Minimum</strong> for all technical sessions.</li>
+                            <li>• <strong>50% Deposit</strong> required to lock calendar dates.</li>
+                            <li>• Same-day response for requests before 4 PM CST.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Required Service</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select Protocol...</option>
+                                <option value="Technical Rescue">Technical Rescue ($150 min)</option>
+                                <option value="Studio Integration">Studio Integration / Setup</option>
+                                <option value="Production">Music Production / Mixing</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Brief Description of Error/Project</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-submit">Transmit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Justin DiCenzo | UPGRADR AUDIO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function navigateToForm(serviceName) {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                const serviceSelect = document.getElementById('service');
+                const options = serviceSelect.options;
+                for (let i = 0; i < options.length; i++) {
+                    if (options[i].value.includes(serviceName)) {
+                        serviceSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+                document.getElementById('name').focus();
+            }, 800);
+        }
+
+        // Handle clickable problem cards
+        document.querySelectorAll('.problem-card').forEach(card => {
+            card.addEventListener('click', () => {
+                navigateToForm('Technical Rescue');
+            });
+        });
+
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0AService: ${service}%0D%0A%0D%0ADetails:%0D%0A${message}`;
+            const mailtoLink = `mailto:musicstudioservices@gmail.com?subject=UPGRADR Inquiry: ${service}&body=${emailBody}`;
+            
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+</html>
