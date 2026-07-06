@@ -537,6 +537,15 @@
             margin-top: 40px;
         }
 
+        .about-content a.inline-link {
+            color: var(--red-hover);
+            text-decoration: none;
+            border-bottom: 1px solid color-mix(in oklab, var(--red-hover) 50%, transparent);
+            transition: border-color var(--transition);
+        }
+
+        .about-content a.inline-link:hover { border-bottom-color: var(--red-hover); }
+
         .credit-tag {
             background: var(--black-2);
             border: 1px solid var(--border);
@@ -547,6 +556,17 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 600;
+        }
+
+        .credit-tag-link {
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .credit-tag-link:hover {
+            border-left-color: var(--red-hover);
+            color: var(--red-hover);
         }
 
         /* ---- Contact ---- */
@@ -970,6 +990,7 @@
                     <ul class="service-list">
                         <li>Full Production (Concept to Master)</li>
                         <li>Access to a curated network of local jazz &amp; classical session musicians</li>
+                        <li>Recorded at <a href="https://claytonstudios.com" target="_blank" rel="noopener" style="color: var(--red-hover); text-decoration: none; border-bottom: 1px solid color-mix(in oklab, var(--red-hover) 50%, transparent);">Clayton Studios</a>, St. Louis</li>
                         <li>Grammy-Winning Mix Engineering</li>
                         <li>Paid in 3 installments: booking deposit, musician/studio costs, final mix &amp; master</li>
                         <li>Distribution Setup Included</li>
@@ -990,11 +1011,14 @@
 
                 <p>With a background in high-pressure broadcast and film environments, Justin understands that downtime is not an option. His work on <strong>Anderson .Paak's "Ventura"</strong> (Grammy Winner), <strong>Get Out</strong>, and <strong>Arrested Development</strong> required absolute technical precision. He brings that same stability to your home studio or production project.</p>
 
+                <p>Justin is a Resident Engineer at <a href="https://claytonstudios.com" target="_blank" rel="noopener" class="inline-link">Clayton Studios</a>, St. Louis' longest-running recording studio since 1976 &mdash; giving Production clients access to a proven room, not a home setup.</p>
+
                 <div class="credit-list">
                     <span class="credit-tag">Grammy Winner (Engineering)</span>
                     <span class="credit-tag">Film Score Tech</span>
                     <span class="credit-tag">Music Coordinator</span>
                     <span class="credit-tag">Lindenwood Professor</span>
+                    <a href="https://claytonstudios.com" target="_blank" rel="noopener" class="credit-tag credit-tag-link">Resident Engineer, Clayton Studios</a>
                 </div>
             </div>
         </div>
