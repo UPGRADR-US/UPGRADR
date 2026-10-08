@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://upgradr-us.github.io/UPGRADR/sitemap.xml
+Sitemap: https://upgradr.us/sitemap.xml
